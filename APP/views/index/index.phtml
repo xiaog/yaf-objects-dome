@@ -1,0 +1,23 @@
+<?php include PATH_TPL."/tpl.header.phtml"?>
+<link href="/css/style.css" type="text/css" rel="stylesheet" />
+
+<div class="container">
+  <div class="sidebar1">
+    <ul class="nav">
+      
+    </ul>
+    <p ></p>
+  </div>
+  <div class="content">
+  	<?php foreach ($blogs as $v1){?>
+  	<h4><a href="/blog/view/id/<?php echo $v1['id']?>"><?php echo $v1['subject']?></a></h4>
+  	<p>评论：<?php echo $v1['comment']?>　查看：<?php echo $v1['view']?></p>
+  	<?php }?>
+</div>
+   <?php echo $page;?>
+  </div>
+ </div>
+</body>
+</html>
+
+<?php include PATH_TPL."/tpl.footer.phtml"?>

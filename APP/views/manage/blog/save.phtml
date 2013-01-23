@@ -1,0 +1,77 @@
+<?php include PATH_TPL."/tpl.header.phtml"?>
+<form method="post">
+<fieldset>
+	<legend><h3 class="title">blog编辑</h3></legend>
+		<table class="formtable">
+			<tbody>
+			<tr>
+				<th>标题</th>
+				<td>
+					<input id="yaf_subject" name="subject"/>
+				</td>
+			</tr>
+			<tr>
+				<th>内容</th>
+				<td>
+					<textarea id="yaf_content" name="content"><?php if(isset($blog)) echo $blog['content']?></textarea>
+				<script type="text/javascript" src="/js/ckeditor/ckeditor.js"></script>
+                <script type="text/javascript" src="/js/ckfinder"></script>
+                <script type="text/javascript" language="javascript">
+                        CKEDITOR.replace('content', { 
+                         filebrowserBrowseUrl : '/js/ckfinder/ckfinder.html', 
+                         filebrowserImageBrowseUrl : '/js/ckfinder/ckfinder.html?Type=Upload', 
+                         filebrowserFlashBrowseUrl : '/js/ckfinder/ckfinder.html?Type=Flash',
+                         filebrowserFilesBrowseUrl : '/js/ckfinder/ckfinder.html?Type=Files',   
+                         filebrowserFilesUrl : '/js/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files', 
+                         filebrowserImageUploadUrl : '/js/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Upload', 
+                         filebrowserFlashUploadUrl : '/js/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash' });
+                </script>
+				</td>
+			</tr>
+			<tr>
+				<th>SEO标题</th>
+				<td>
+					<input id="yaf_seot" name="seot"/>
+				</td>
+			</tr>
+			<tr>
+				<th>SEO关键词</th>
+				<td>
+					<input id="yaf_seok" name="seok"/>
+				</td>
+			</tr>
+			<tr>
+				<th>SEO描述</th>
+				<td>
+					<input id="yaf_seod" name="seod"/>
+				</td>
+			</tr>
+			<tr>
+				<th>评论数</th>
+				<td>
+					<input id="yaf_comment" name="comment"/>
+				</td>
+			</tr>
+			<tr>
+				<th>查看数</th>
+				<td>
+					<input id="yaf_view" name="view"/>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</fieldset>
+	<fieldset><input type="submit" value="保存"></fieldset>
+</form>
+<? if(isset($blog)){?>
+<script type="text/javascript">
+WVKE.val('yaf_subject', '<?php echo $blog['subject']?>');
+WVKE.val('yaf_seot', '<?php echo $blog['seot']?>');
+WVKE.val('yaf_seok', '<?php echo $blog['seok']?>');
+WVKE.val('yaf_seod', '<?php echo $blog['seod']?>');
+WVKE.val('yaf_comment', '<?php echo $blog['comment']?>');
+WVKE.val('yaf_view', '<?php echo $blog['view']?>');
+</script>
+<? }?>
+</body>
+</html>

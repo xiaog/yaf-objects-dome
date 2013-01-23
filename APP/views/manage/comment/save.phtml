@@ -1,0 +1,45 @@
+<?php include PATH_TPL."/tpl.header.phtml"?>
+<form method="post">
+<fieldset>
+	<legend><h3 class="title">comment编辑</h3></legend>
+		<table class="formtable">
+			<tbody>
+			<tr class="hide">
+				<th>主键</th>
+				<td>
+					<input id="yaf_id" name="id"/>
+				</td>
+			</tr>
+			<tr>
+				<th>BLOGID</th>
+				<td>
+					<input id="yaf_bid" name="bid"/>
+				</td>
+			</tr>
+			<tr>
+				<th>内容</th>
+				<td>
+					<input id="yaf_content" name="content"/>
+				</td>
+			</tr>
+			<tr class="hide">
+				<th>创建时间</th>
+				<td>
+					<input id="yaf_created" name="created"/>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</fieldset>
+	<fieldset><input type="submit" value="保存"></fieldset>
+</form>
+<? if(isset($data)){?>
+<script type="text/javascript">
+$('#yaf_id').val('<?php echo $data["id"]?>');
+$('#yaf_bid').val('<?php echo $data["bid"]?>');
+$('#yaf_content').val('<?php echo $data["content"]?>');
+$('#yaf_created').val('<?php echo $data["created"]?>');
+</script>
+<? }?>
+</body>
+</html>

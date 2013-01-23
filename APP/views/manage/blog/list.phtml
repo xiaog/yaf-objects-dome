@@ -1,0 +1,35 @@
+<?php include PATH_TPL."/tpl.header.phtml"?>
+<div class="mod">
+	<div class="hd">
+		<h3 class="title">blog列表</h3>
+	</div>
+	<div class="bd">
+	<table class="table_s01" width="100%">
+		<thead>
+			<tr>
+				<th>标题</th>
+				<th>创建时间</th>
+				<th>评论数</th>
+				<th>查看数</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+		<?php foreach ($datas as $v1){?>
+		<tr>
+			<td><?php echo $v1["subject"]?></td>
+			<td><?php echo date('Y.m.d', $v1["created"])?></td>
+			<td><?php echo $v1["comment"]?></td>
+			<td><?php echo $v1["view"]?></td>
+			<td width="40">
+				<a href="/manage_blog/save/id/<?php echo $v1["id"]?>" title="修改">改</a>
+				<a href="/manage_blog/del/id/<?php echo $v1["id"]?>" title="删除">删</a>
+			</td>
+		</tr>
+		<?php }?>
+		</tbody>
+	</table>
+	</div>
+</div>
+</body>
+</html>

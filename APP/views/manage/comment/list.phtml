@@ -1,0 +1,30 @@
+<?php include PATH_TPL."/tpl.header.phtml"?>
+<div class="mod">
+	<div class="hd">
+		<h3 class="title">comment列表</h3>
+	</div>
+	<div class="bd">
+	<table class="table_s01">
+		<thead>
+			<tr>
+				<th>内容</th>
+				<th>创建时间</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+		<?php foreach ($datas as $v1){?>
+		<tr>
+			<td><?php echo $v1["content"]?></td>
+			<td><?php echo date('Y.m.d', $v1["created"])?></td>
+			<td width="40">
+				<a href="/manage_comment/del/id/<?php echo $v1["id"]?>" title="删除">删</a>
+			</td>
+		</tr>
+		<?php }?>
+		</tbody>
+	</table>
+	</div>
+</div>
+</body>
+</html>
