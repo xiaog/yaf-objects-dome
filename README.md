@@ -1,6 +1,6 @@
 yaf-objects-dome
 ================
-##This app to be build for study,It's base on zhangyang's app ##
+##This demo to be build for study,It's base on zhangyang's demo ##
 my yaf objects
 
 
